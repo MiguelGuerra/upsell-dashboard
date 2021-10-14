@@ -8,12 +8,15 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import TransactionInfo from './pages/TransactionInfo';
 import { MainContext } from './contexts/MainContext'
 import HamburguerMenu from './components/HamburguerMenu';
+import Configurations from './pages/Configurations';
 
 function App() {
   //global state using context api for transaction selected
   const [selectedTransaction, setSelectedTransaction] = useState([])
   //side menu starts opened
   const [menuOpen, setMenuOpen] = useState(true)
+  const [primaryColor, setPrimaryColor] = useState('#5d88cc')
+  const [secondaryColor, setSecondaryColor] = useState('#ffffff')
 
   //to protect transiction details route
   const [hasSelectedTransition, setHasSelectedTransition] = useState(false)
@@ -26,7 +29,11 @@ function App() {
         selectedTransaction,
         setSelectedTransaction,
         hasSelectedTransition,
-        setHasSelectedTransition
+        setHasSelectedTransition,
+        primaryColor,
+        setPrimaryColor,
+        secondaryColor,
+        setSecondaryColor
       }}>
         <div>
           <Header />
@@ -39,6 +46,9 @@ function App() {
               </Route>
               <Route path="/last-transactions">
                 <LastTransactions />
+              </Route>
+              <Route path="/configurations">
+                <Configurations />
               </Route>
               <Route path="/">
                 <StatisticsSummary />

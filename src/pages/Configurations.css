@@ -1,0 +1,23 @@
+label {
+    width: 200px;
+    color: black;
+}
+
+.option {
+    margin-bottom: 20px;
+}
+
+.option div{
+    width: 200px;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.option input{
+    vertical-align: middle;
+    width: 100px;
+    height: 50px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+}

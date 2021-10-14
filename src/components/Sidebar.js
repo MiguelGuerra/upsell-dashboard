@@ -2,8 +2,9 @@ import React, { useState, useContext } from 'react'
 import './Sidebar.css'
 import { IoIosArrowBack } from "react-icons/io";
 import { RiDashboard3Line } from "react-icons/ri";
-import { GrTransaction } from "react-icons/gr";
-import { Link } from "react-router-dom";
+import { AiOutlineUnorderedList } from "react-icons/ai";
+import { FiTool } from "react-icons/fi";
+import { Link, NavLink } from "react-router-dom";
 import { MainContext } from '../contexts/MainContext';
 
 function Sidebar() {
@@ -22,18 +23,24 @@ function Sidebar() {
                 onClick={() => handleMenuOpen()}>
                 <IoIosArrowBack />
             </div>
-            <Link to="/">
+            <NavLink exact to="/" activeClassName="active">
                 <div className="menu-item">
                     <RiDashboard3Line />
                     <p>Statistics Summary</p>
                 </div>
-            </Link>
-            <Link to="/last-transactions">
+            </NavLink>
+            <NavLink exact to="/last-transactions" activeClassName="active">
                 <div className="menu-item">
-                    <GrTransaction />
+                    <AiOutlineUnorderedList />
                     <p>Last Transactions</p>
                 </div>
-            </Link>
+            </NavLink>
+            <NavLink exact to="/configurations" activeClassName="active">
+                <div className="menu-item">
+                    <FiTool />
+                    <p>Configurations</p>
+                </div>
+            </NavLink>
         </aside>
     )
 }
