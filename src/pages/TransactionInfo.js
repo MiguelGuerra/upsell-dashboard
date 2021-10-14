@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useContext } from 'react'
 import './TransactionInfo.css'
-import { Link, useParams } from "react-router-dom";
+import { Link, useParams, useHistory  } from "react-router-dom";
 import PageTitle from '../components/PageTitle'
 import { MainContext } from '../contexts/MainContext';
 import { IoArrowBack } from "react-icons/io5";
@@ -13,10 +13,16 @@ function TransactionInfo() {
     const { id } = useParams();
     //to generate a random user on img src
     const [seed, setSeed] = useState('');
+    let history = useHistory();
 
     //for the random avatar
     useEffect(() => {
         setSeed(Math.floor(Math.random() * 5000))
+
+        //protect route, only allow user if he previously selected a transaction
+        if(selectedTransaction.length === 0) {
+            history.push('/last-transactions')
+        }
     }, []);
 
     return (

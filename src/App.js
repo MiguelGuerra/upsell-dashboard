@@ -14,14 +14,19 @@ function App() {
   const [selectedTransaction, setSelectedTransaction] = useState([])
   //side menu starts opened
   const [menuOpen, setMenuOpen] = useState(true)
-  
+
+  //to protect transiction details route
+  const [hasSelectedTransition, setHasSelectedTransition] = useState(false)
+
   return (
     <Router>
       <MainContext.Provider value={{
         menuOpen,
         setMenuOpen,
         selectedTransaction,
-        setSelectedTransaction
+        setSelectedTransaction,
+        hasSelectedTransition,
+        setHasSelectedTransition
       }}>
         <div>
           <Header />
