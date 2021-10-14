@@ -1,0 +1,37 @@
+.labels {
+    display: flex;
+    color: black;
+    padding: 20px;
+    margin-bottom: 0;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.transactions-list .transaction {
+    display: flex;
+    background-color: white;
+    color: black;
+    padding: 16px;
+    margin-bottom: 16px;
+    border-radius: 6px;
+    box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+    flex-wrap: wrap;
+    cursor: pointer;
+}
+
+.transactions-list .transaction div,
+.transactions-list .labels div{
+    flex: 0 0 20%;
+}
+
+.transactions-list .labels div:last-child p{
+    float: right;
+}
+
+.actions svg {
+    color: green;
+    font-size: 25px;
+    float: right;
+}

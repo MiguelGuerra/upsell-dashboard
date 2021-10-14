@@ -1,0 +1,13 @@
+header {
+    width: 100%;
+    background-color: white;
+    height: 10vh;
+    position: fixed;
+    z-index: 90;
+    top: 0;
+}
+
+header img {
+    width: 9%;
+    min-width: 140px;
+}
