@@ -7,7 +7,7 @@
 }
 
 .left-panel {
-    width: 78%;
+    width: 75%;
     display: inline-block;
     margin-left: 22%;
     margin-top: 10vh;
@@ -25,6 +25,6 @@
 }
 
 .left-panel.large {
-    width: 90% !important;
+    width: 86% !important;
     margin-left: 10%;
 }

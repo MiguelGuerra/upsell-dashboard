@@ -1,0 +1,57 @@
+.transaction-info {
+    background-color: white;
+    border-radius: 6px;
+    padding: 40px;
+    padding-bottom: 60px;
+    
+    box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
+}
+
+.transaction-info .back {
+    cursor: pointer;
+    margin-bottom: 50px;
+}
+
+.transaction-info .back svg{
+    font-size: 25px;
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+.transaction-info .back span{
+    font-size: 1.2rem;
+    vertical-align: middle;
+}
+
+.transaction-info .left {
+    display: inline-block;
+    width: 20%;
+    min-width: 250px;
+    margin-right: 5%;
+    vertical-align: top;
+    border-right: 2px solid rgba(197, 197, 197, 0.658);
+}
+
+.transaction-info .avatar {
+    width: 200px;
+
+}
+.transaction-info .left img{
+    background-color: var(--primaryColor);
+    border-radius: 100px;
+    width: 100%;
+}
+
+.transaction-info .right {
+    display: inline-block;
+    width: 70%;
+    vertical-align: top;
+    line-height: 3;
+    color: rgb(168, 168, 168);
+}
+
+.transaction-info .right .info b {
+    width: 100px;
+    display: inline-table;
+    color: rgb(102, 102, 102);
+}

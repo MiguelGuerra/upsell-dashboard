@@ -1,7 +1,9 @@
 import React, { useState, useEffect, useContext } from 'react'
-import { useParams } from "react-router-dom";
+import './TransactionInfo.css'
+import { Link, useParams } from "react-router-dom";
 import PageTitle from '../components/PageTitle'
 import { MainContext } from '../contexts/MainContext';
+import { IoArrowBack } from "react-icons/io5";
 
 function TransactionInfo() {
     //get global state of selected transaction
@@ -19,29 +21,32 @@ function TransactionInfo() {
 
     return (
         <div>
-            <PageTitle title={`Transactions Info (Id: ${id})`} />
+            <PageTitle title={`Details from ${selectedTransaction.guest} Transaction`} />
             <div className="transaction-info">
-                <div className="left-panel">
+                <div className="back">
+                    <Link to="/last-transactions">
+                        <IoArrowBack />
+                        <span>Back</span>
+                    </Link>
+                </div>
+                <div className="left">
                     <div className="avatar">
                         <img src={`https://avatars.dicebear.com/api/human/${seed}.svg`} alt="random-user" />
                     </div>
                 </div>
-                <div className="right-panel">
+                <div className="right">
                     <div className="info">
-                        <p>Name</p>
-                        <p>{selectedTransaction.guest}</p>
+                        <p><b>Name:</b> {selectedTransaction.guest}</p>
                     </div>
                     <div className="info">
-                        <p>Guest Id</p>
-                        <p>{selectedTransaction.guestId}</p>
+                        <p><b>Guest Id:</b> {selectedTransaction.guestId}</p>
                     </div>
                     <div className="info">
-                        <p>Items</p>
-                        <p>{selectedTransaction.itemsCount}</p>
+                        <p><b>Items:</b> {selectedTransaction.itemsCount}</p>
                     </div>
                     <div className="info">
-                        <p>Total</p>
-                        <p>{selectedTransaction.totalValue}</p>
+                        <p><b>Total:</b> {selectedTransaction.totalValue}</p>
+                        <p></p>
                     </div>
                 </div>
             </div>

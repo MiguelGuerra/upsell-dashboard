@@ -26,12 +26,19 @@
     flex: 0 0 20%;
 }
 
+.transaction p {
+    margin-top: 10px;
+}
+
 .transactions-list .labels div:last-child p{
     float: right;
 }
 
 .actions svg {
-    color: green;
-    font-size: 25px;
+    color: var(--secondaryColor);
+    font-size: 21px;
     float: right;
+    background: var(--primaryColor);
+    padding: 9px;
+    border-radius: 50px;
 }
