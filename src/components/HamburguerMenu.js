@@ -8,7 +8,7 @@ function HamburguerMenu() {
             <div className="menu">
                 <nav className="burger-menu">
                     <input className="menu-check" type="checkbox" name="menu-check" value="" id="menu-check" />
-                    <label className="menu-open" for="menu-check">
+                    <label className="menu-open" htmlFor="menu-check">
                         <span className="burger1"></span>
                         <span className="burger2"></span>
                         <span className="burger3"></span>

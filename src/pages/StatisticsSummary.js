@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import './StatisticsSummary.css'
 import PageTitle from '../components/PageTitle'
 import axios from 'axios'
@@ -7,8 +7,12 @@ import LineChart from '../components/LineChart'
 import BarChart from '../components/BarChart'
 import { DataGrid } from '@mui/x-data-grid';
 import PieChart from '../components/PieChart'
+import { MainContext } from '../contexts/MainContext';
 
 function StatisticsSummary() {
+    //to change global state of selected transaction
+    const { setIsLoading } = useContext(MainContext)
+
     const [summaryData, setSummaryData] = useState([]);
     const [arrivalDateData, setArrivalDateData] = useState([]);
     const [emailsSentData, setEmailsSentData] = useState([]);
@@ -19,9 +23,12 @@ function StatisticsSummary() {
 
     //fetch the api data and pass it to component state
     useEffect(() => {
+        setIsLoading(true)
         axios.get(restUrls.dashboardUrl)
-            .then(response =>
+            .then(response => {
                 setSummaryData(response.data)
+                setIsLoading(false)
+            }
             );
     }, [])
 
@@ -66,9 +73,6 @@ function StatisticsSummary() {
         }, 0);
 
         setDataSumForPieChart([emailsTotal, reservatiosTotal, transactionsTotal])
-        console.log('Total Reservations:', reservatiosTotal);
-        console.log('Total Emails:', emailsTotal);
-        console.log('Total trasactions:', transactionsTotal);
     }, [summaryData])
 
 

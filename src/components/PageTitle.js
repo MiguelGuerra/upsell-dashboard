@@ -1,7 +1,5 @@
 import React from 'react'
 import './PageTitle.css'
-import { RiDashboard3Line } from "react-icons/ri";
-import { GrTransaction } from "react-icons/gr";
 
 function PageTitle(props) {
     return (

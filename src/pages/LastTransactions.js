@@ -9,20 +9,23 @@ import { MainContext } from '../contexts/MainContext';
 
 function LastTransactions() {
     //to change global state of selected transaction
-    const { setSelectedTransaction } = useContext(MainContext)
+    const { setSelectedTransaction, setIsLoading } = useContext(MainContext)
 
     const [transactionsData, setTransactionsData] = useState([]);
 
     //fetch the api data and pass it to component state
     useEffect(() => {
+        setIsLoading(true)
         axios.get(restUrls.transactionsUrl)
-            .then(response =>
-                setTransactionsData(response.data)
-            );
+            .then((response) => {
+                setTransactionsData(response.data);
+                setIsLoading(false)
+            });
+
     }, [])
 
     const handleTransactionClick = (selectedTransaction) => {
-        console.log('---> ', selectedTransaction)
+        // console.log('---> ', selectedTransaction)
         setSelectedTransaction(selectedTransaction)
     }
 
@@ -48,11 +51,10 @@ function LastTransactions() {
                     </div>
                 </div>
                 {transactionsData.map(transaction => (
-                    <Link to={`/last-transactions/${transaction.id}`}>
+                    <Link to={`/last-transactions/${transaction.id}`} key={transaction.id}>
                         <div
                             onClick={() => handleTransactionClick(transaction)}
-                            className="transaction"
-                            key={transaction.id}>
+                            className="transaction">
                             <div>
                                 <p>{transaction.guest}</p>
                             </div>

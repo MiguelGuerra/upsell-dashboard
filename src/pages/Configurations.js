@@ -26,7 +26,7 @@ function Configurations() {
             <PageTitle title="Configurations" />
             <div className="option">
                 <div>
-                    <label for="colr-picker">Choose primary color:</label>
+                    <label htmlFor="colr-picker">Choose primary color:</label>
                 </div>
                 <input
                     value={primaryColor}
@@ -36,7 +36,7 @@ function Configurations() {
             </div>
             <div className="option">
                 <div>
-                    <label for="colr-picker">Choose secondary color:</label>
+                    <label htmlFor="colr-picker">Choose secondary color:</label>
                 </div>
                 <input
                     value={secondaryColor}

@@ -1,10 +1,10 @@
-import React, { useState, useContext } from 'react'
+import React, {  useContext } from 'react'
 import './Sidebar.css'
 import { IoIosArrowBack } from "react-icons/io";
 import { RiDashboard3Line } from "react-icons/ri";
 import { AiOutlineUnorderedList } from "react-icons/ai";
 import { FiTool } from "react-icons/fi";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { MainContext } from '../contexts/MainContext';
 
 function Sidebar() {

@@ -1,7 +1,8 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
 import './App.css';
 import Header from './components/Header';
 import Sidebar from './components/Sidebar';
+import Loading from './components/Loading';
 import LastTransactions from './pages/LastTransactions';
 import StatisticsSummary from './pages/StatisticsSummary';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
@@ -11,6 +12,9 @@ import HamburguerMenu from './components/HamburguerMenu';
 import Configurations from './pages/Configurations';
 
 function App() {
+  //global state loading
+  const [isLoading, setIsLoading] = useState(false)
+
   //global state using context api for transaction selected
   const [selectedTransaction, setSelectedTransaction] = useState([])
   //side menu starts opened
@@ -23,6 +27,10 @@ function App() {
 
   return (
     <Router>
+      {isLoading ?
+        <Loading />
+        : ''
+      }
       <MainContext.Provider value={{
         menuOpen,
         setMenuOpen,
@@ -33,7 +41,8 @@ function App() {
         primaryColor,
         setPrimaryColor,
         secondaryColor,
-        setSecondaryColor
+        setSecondaryColor,
+        setIsLoading
       }}>
         <div>
           <Header />
