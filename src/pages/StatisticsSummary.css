@@ -10,7 +10,7 @@
 
 .flat-table th,
 .flat-table td {
-    box-shadow: inset 0 -1px rgba(0, 0, 0, 0.1), inset 0 1px rgba(0, 0, 0, 0.10);
+    box-shadow: inset 0 -1px rgba(0, 0, 0, 0.1), inset 0 1px rgba(0, 0, 0, 0.1);
 }
 
 .flat-table th {
@@ -19,7 +19,7 @@
     -webkit-font-smoothing: antialiased;
     color: var(--secondaryColor);
     background-color: var(--primaryColor);
-    padding: .6em 1em;
+    padding: 0.6em 1em;
     font-size: 1rem;
 }
 
@@ -48,7 +48,7 @@
     display: flex;
     flex-wrap: wrap;
     width: 100%;
-    justify-content: center;
+    justify-content: left;
     margin-bottom: 50px;
 }
 
@@ -70,7 +70,7 @@
     vertical-align: top;
 }
 
-.pie-chart-wrapper h5{
+.pie-chart-wrapper h5 {
     text-align: center;
     color: black;
     margin-bottom: 10px;
@@ -78,4 +78,31 @@
 
 .pie-chart-wrapper canvas {
     height: 330px;
+}
+
+.MuiDataGrid-columnsContainer {
+    background: var(--primaryColor);
+    color: var(--secondaryColor);
+}
+
+/* media queries */
+@media only screen and (max-width: 1500px) {
+    .left-panel {
+        width: 73%;
+        margin-left: 25%;
+    }
+}
+
+@media only screen and (max-width: 1300px) {
+    .left-panel {
+        width: 65%;
+        margin-left: 32%;
+    }
+}
+
+@media only screen and (max-width: 1000px) {
+    .left-panel {
+        width: 100%;
+        margin-left: 0;
+    }
 }

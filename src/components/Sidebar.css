@@ -19,6 +19,7 @@ aside.opened {
 
 aside.closed {
     width: 4%;
+    min-width: 65px;
 }
 
 aside.closed p {

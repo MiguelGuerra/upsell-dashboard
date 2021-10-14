@@ -76,9 +76,9 @@ function StatisticsSummary() {
     const columns = [
         // { field: 'id', headerName: 'ID', type: 'number', width: 50 },
         { field: 'arrivalDate', headerName: 'Arrival Date', width: 190 },
-        { field: 'emailsSentCount', headerName: 'Emails Sent', type: 'number', width: 150 },
-        { field: 'reservationsCount', headerName: 'Reservations', type: 'number', width: 180 },
-        { field: 'transactionsCount', headerName: 'Transactions', type: 'number', width: 180 }
+        { field: 'emailsSentCount', headerName: 'Emails', type: 'number', width: 150 },
+        { field: 'reservationsCount', headerName: 'Reservations', type: 'number', width: 170 },
+        { field: 'transactionsCount', headerName: 'Transactions', type: 'number', width: 170 }
 
     ];
 
