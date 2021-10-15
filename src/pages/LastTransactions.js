@@ -4,7 +4,6 @@ import './LastTransactions.css'
 import PageTitle from '../components/PageTitle'
 import axios from 'axios'
 import { restUrls } from '../services/constants'
-import { FaSearchPlus } from "react-icons/fa"
 import ListItem from '../components/ListItem'
 import { MainContext } from '../contexts/MainContext'
 
@@ -21,12 +20,15 @@ function LastTransactions() {
             .then((response) => {
                 setTransactionsData(response.data);
                 setIsLoading(false)
+            })
+            .catch((error) => {
+                alert("It wasn`t possible to fetch data");
+                setIsLoading(false)
             });
 
     }, [])
 
     const handleTransactionClick = (selectedTransaction) => {
-        // console.log('---> ', selectedTransaction)
         setSelectedTransaction(selectedTransaction)
     }
 
@@ -53,7 +55,7 @@ function LastTransactions() {
                 </div>
                 {transactionsData.map(transaction => (
                     <Link to={`/last-transactions/${transaction.id}`} key={transaction.id}>
-                        <ListItem 
+                        <ListItem
                             handleListItemClick={() => handleTransactionClick(transaction)}
                             data={transaction}
                         />

@@ -50,8 +50,11 @@ function StatisticsSummary() {
                 setDateEmailsSent(response.data[0].emailsSentCount)
                 setDateReservationsSent(response.data[0].reservationsCount)
                 setDateTransactionsSent(response.data[0].transactionsCount)
-            }
-            );
+            })
+            .catch((error) => {
+                alert("It wasn`t possible to fetch data");
+                setIsLoading(false)
+            });
     }, [])
 
     useEffect(() => {
@@ -112,7 +115,7 @@ function StatisticsSummary() {
             <PageTitle title="Statistics Summary" />
             <div>
                 <div className="filter-data">
-                    <Dropdown 
+                    <Dropdown
                         options={summaryData}
                         handleValues={handleSearchDate}
                     />

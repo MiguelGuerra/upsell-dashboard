@@ -9,7 +9,7 @@ function Dropdown({ options, handleValues }) {
                 name="filter"
                 onChange={e => handleValues(e.target.value)}>
                 {options.map(option => (
-                    <option value={option.arrivalDate}>{option.arrivalDate}</option>
+                    <option key={option.id} value={option.arrivalDate}>{option.arrivalDate}</option>
                 ))}
             </select>
             <div className="select-icon">
