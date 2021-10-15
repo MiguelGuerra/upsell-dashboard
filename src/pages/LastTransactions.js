@@ -4,8 +4,9 @@ import './LastTransactions.css'
 import PageTitle from '../components/PageTitle'
 import axios from 'axios'
 import { restUrls } from '../services/constants'
-import { FaSearchPlus } from "react-icons/fa";
-import { MainContext } from '../contexts/MainContext';
+import { FaSearchPlus } from "react-icons/fa"
+import ListItem from '../components/ListItem'
+import { MainContext } from '../contexts/MainContext'
 
 function LastTransactions() {
     //to change global state of selected transaction
@@ -52,25 +53,10 @@ function LastTransactions() {
                 </div>
                 {transactionsData.map(transaction => (
                     <Link to={`/last-transactions/${transaction.id}`} key={transaction.id}>
-                        <div
-                            onClick={() => handleTransactionClick(transaction)}
-                            className="transaction">
-                            <div>
-                                <p>{transaction.guest}</p>
-                            </div>
-                            <div>
-                                <p>{transaction.guestId}</p>
-                            </div>
-                            <div>
-                                <p>{transaction.itemsCount}</p>
-                            </div>
-                            <div>
-                                <p>{transaction.totalValue}</p>
-                            </div>
-                            <div className="actions">
-                                <FaSearchPlus />
-                            </div>
-                        </div>
+                        <ListItem 
+                            handleListItemClick={() => handleTransactionClick(transaction)}
+                            data={transaction}
+                        />
                     </Link>
                 ))}
             </div>

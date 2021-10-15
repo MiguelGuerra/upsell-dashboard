@@ -1,7 +1,6 @@
 import React, { useEffect, useState, useContext } from 'react'
 import './StatisticsSummary.css'
 import PageTitle from '../components/PageTitle'
-import { FaAngleDown } from "react-icons/fa"
 import axios from 'axios'
 import { restUrls } from '../services/constants'
 import LineChart from '../components/LineChart'
@@ -10,6 +9,7 @@ import { DataGrid } from '@mui/x-data-grid';
 import PieChart from '../components/PieChart'
 import { MainContext } from '../contexts/MainContext'
 import DashValues from '../components/DashValues'
+import Dropdown from '../components/Dropdown'
 
 function StatisticsSummary() {
     //to change global state of selected transaction
@@ -24,6 +24,7 @@ function StatisticsSummary() {
     const [dataSumForPieChart, setDataSumForPieChart] = useState([]);
 
     //state for dash values
+    const [dateSelected, setDateSelected] = useState(0);
     const [dateEmailsSent, setDateEmailsSent] = useState(0);
     const [dateReservationsSent, setDateReservationsSent] = useState(0);
     const [dateTransactionsSent, setDateTransactionsSent] = useState(0);
@@ -45,6 +46,7 @@ function StatisticsSummary() {
                 setSummaryData(response.data)
                 setIsLoading(false)
                 //has a default value aways show first arrival date values on dash info
+                setDateSelected(response.data[0].arrivalDate)
                 setDateEmailsSent(response.data[0].emailsSentCount)
                 setDateReservationsSent(response.data[0].reservationsCount)
                 setDateTransactionsSent(response.data[0].transactionsCount)
@@ -110,19 +112,10 @@ function StatisticsSummary() {
             <PageTitle title="Statistics Summary" />
             <div>
                 <div className="filter-data">
-                    <div className="select-wrapper">
-                        <select
-                            name="filter"
-                            onChange={e => handleSearchDate(e.target.value)}>
-                            {summaryData.map(data => (
-                                <option value={data.arrivalDate}>{data.arrivalDate}</option>
-                            ))}
-                        </select>
-                        <div class="select-icon">
-                            <FaAngleDown />
-                        </div>
-
-                    </div>
+                    <Dropdown 
+                        options={summaryData}
+                        handleValues={handleSearchDate}
+                    />
                     <DashValues
                         emailsSent={dateEmailsSent}
                         reservations={dateReservationsSent}

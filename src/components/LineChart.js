@@ -24,7 +24,7 @@ function LineChart({
     }
 
     return (
-        <div className="line-chart">
+        <div data-testid="line-chart" className="line-chart">
             <Line data={data} />
         </div>
     )

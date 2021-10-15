@@ -3,7 +3,7 @@ import './DashValues.css'
 
 function DashValues({ emailsSent, reservations, transactions }) {
     return (
-        <div className="dash-values-section">
+        <div data-testid="dash-values" className="dash-values-section">
             <div className="dash-value">
                 <div>
                     <b>{emailsSent}</b>

@@ -9,36 +9,10 @@
     font-weight: 500;
 }
 
-.transactions-list .transaction {
-    display: flex;
-    background-color: white;
-    color: black;
-    padding: 16px;
-    margin-bottom: 16px;
-    border-radius: 6px;
-    box-shadow: 0 3px 6px rgb(0 0 0 / 16%), 0 3px 6px rgb(0 0 0 / 23%);
-    flex-wrap: wrap;
-    cursor: pointer;
-}
-
-.transactions-list .transaction div,
 .transactions-list .labels div{
     flex: 0 0 20%;
 }
 
-.transaction p {
-    margin-top: 10px;
-}
-
 .transactions-list .labels div:last-child p{
     float: right;
-}
-
-.actions svg {
-    color: var(--secondaryColor);
-    font-size: 21px;
-    float: right;
-    background: var(--primaryColor);
-    padding: 9px;
-    border-radius: 50px;
 }

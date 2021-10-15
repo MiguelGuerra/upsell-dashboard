@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LineChart renders when is receives props 1`] = `
+<div
+  className="line-chart"
+  data-testid="line-chart"
+>
+  <canvas
+    data-testid="canvas"
+    height={150}
+    onClick={[Function]}
+    role="img"
+    width={300}
+  />
+</div>
+`;

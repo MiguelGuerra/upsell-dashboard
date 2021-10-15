@@ -8,20 +8,9 @@ import { NavLink } from "react-router-dom";
 import { MainContext } from '../contexts/MainContext';
 
 function Sidebar() {
-    //side menu starts opened
-    const { menuOpen, setMenuOpen } = useContext(MainContext)
-
-    const handleMenuOpen = () => {
-        setMenuOpen(!menuOpen)
-    }
 
     return (
-        <aside className={menuOpen ? 'opened' : 'closed'}>
-            {/* <div
-                className={`arrow ${menuOpen ? '' : 'closed'}`}
-                onClick={() => handleMenuOpen()}>
-                <IoIosArrowBack />
-            </div> */}
+        <aside className="opened">
             <NavLink exact to="/" activeClassName="active">
                 <div className="menu-item">
                     <RiDashboard3Line />

@@ -3,7 +3,7 @@ import './PageTitle.css'
 
 function PageTitle(props) {
     return (
-        <div className="title">
+        <div data-testid="page-title" className="title">
             <h1>{props.title}</h1>
             <hr />
         </div>

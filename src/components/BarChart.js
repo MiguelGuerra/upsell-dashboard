@@ -20,7 +20,7 @@ function BarChart({
         ]
     }
     return (
-        <div className="bar-chart">
+        <div data-testid="bar-chart" className="bar-chart">
             <Bar
                 data={data}
                 options={{ maintainAspectRatio: false }} />

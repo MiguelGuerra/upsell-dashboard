@@ -20,7 +20,7 @@ function PieChart({
         ]
     }
     return (
-        <div className="pie-chart">
+        <div data-testid="pie-chart" className="pie-chart">
             <Doughnut
                 data={data}
                 options={{ maintainAspectRatio: false }} />
