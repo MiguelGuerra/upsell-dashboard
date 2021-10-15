@@ -1,13 +1,15 @@
 import React, { useEffect, useState, useContext } from 'react'
 import './StatisticsSummary.css'
 import PageTitle from '../components/PageTitle'
+import { FaAngleDown } from "react-icons/fa"
 import axios from 'axios'
 import { restUrls } from '../services/constants'
 import LineChart from '../components/LineChart'
 import BarChart from '../components/BarChart'
 import { DataGrid } from '@mui/x-data-grid';
 import PieChart from '../components/PieChart'
-import { MainContext } from '../contexts/MainContext';
+import { MainContext } from '../contexts/MainContext'
+import DashValues from '../components/DashValues'
 
 function StatisticsSummary() {
     //to change global state of selected transaction
@@ -21,6 +23,20 @@ function StatisticsSummary() {
     const [rowsForTableData, setRowsForTableData] = useState([]);
     const [dataSumForPieChart, setDataSumForPieChart] = useState([]);
 
+    //state for dash values
+    const [dateEmailsSent, setDateEmailsSent] = useState(0);
+    const [dateReservationsSent, setDateReservationsSent] = useState(0);
+    const [dateTransactionsSent, setDateTransactionsSent] = useState(0);
+
+    const handleSearchDate = (date) => {
+        var selectedData = summaryData.find(data => {
+            return data.arrivalDate === date;
+        })
+        setDateEmailsSent(selectedData.emailsSentCount)
+        setDateReservationsSent(selectedData.reservationsCount)
+        setDateTransactionsSent(selectedData.transactionsCount)
+    }
+
     //fetch the api data and pass it to component state
     useEffect(() => {
         setIsLoading(true)
@@ -28,6 +44,10 @@ function StatisticsSummary() {
             .then(response => {
                 setSummaryData(response.data)
                 setIsLoading(false)
+                //has a default value aways show first arrival date values on dash info
+                setDateEmailsSent(response.data[0].emailsSentCount)
+                setDateReservationsSent(response.data[0].reservationsCount)
+                setDateTransactionsSent(response.data[0].transactionsCount)
             }
             );
     }, [])
@@ -88,6 +108,28 @@ function StatisticsSummary() {
     return (
         <div>
             <PageTitle title="Statistics Summary" />
+            <div>
+                <div className="filter-data">
+                    <div className="select-wrapper">
+                        <select
+                            name="filter"
+                            onChange={e => handleSearchDate(e.target.value)}>
+                            {summaryData.map(data => (
+                                <option value={data.arrivalDate}>{data.arrivalDate}</option>
+                            ))}
+                        </select>
+                        <div class="select-icon">
+                            <FaAngleDown />
+                        </div>
+
+                    </div>
+                    <DashValues
+                        emailsSent={dateEmailsSent}
+                        reservations={dateReservationsSent}
+                        transactions={dateTransactionsSent}
+                    />
+                </div>
+            </div>
             <div className="charts">
                 <div className="line-charts">
                     <LineChart

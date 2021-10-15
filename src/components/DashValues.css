@@ -1,0 +1,25 @@
+.dash-values-section {
+    width: 100%;
+    margin-bottom: 30px;
+    border-radius: 6px;
+    margin-top: 20px;
+    color: rgb(75, 75, 75);
+}
+
+.dash-values-section .dash-value{
+    box-sizing: border-box;
+    width: 30%;
+    padding: 14px 15px;
+    border-left: 4px solid #007dc3;
+    background-color: rgba(0, 125, 195, 0.1);
+    margin-right: 5%;
+    display: inline-block;
+}
+
+.dash-values-section .dash-value:last-child{
+    margin-right: 0;
+}
+
+.dash-values-section .dash-value b{
+    font-size: 2rem;
+}
