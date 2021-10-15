@@ -9,7 +9,6 @@ import { MainContext } from '../contexts/MainContext';
 
 function Sidebar() {
     //side menu starts opened
-    // const [menuOpen, setMenuOpen] = useState(true)
     const { menuOpen, setMenuOpen } = useContext(MainContext)
 
     const handleMenuOpen = () => {
@@ -18,11 +17,11 @@ function Sidebar() {
 
     return (
         <aside className={menuOpen ? 'opened' : 'closed'}>
-            <div
+            {/* <div
                 className={`arrow ${menuOpen ? '' : 'closed'}`}
                 onClick={() => handleMenuOpen()}>
                 <IoIosArrowBack />
-            </div>
+            </div> */}
             <NavLink exact to="/" activeClassName="active">
                 <div className="menu-item">
                     <RiDashboard3Line />

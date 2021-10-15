@@ -14,7 +14,7 @@ function PieChart({
                 backgroundColor: [
                     '#ffae4a',
                     '#41a6c3',
-                    '#034b7c'
+                    '#fb928E'
                 ]
             }
         ]

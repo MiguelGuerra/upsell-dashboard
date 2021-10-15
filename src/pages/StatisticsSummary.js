@@ -78,11 +78,10 @@ function StatisticsSummary() {
 
     //data for table headers
     const columns = [
-        // { field: 'id', headerName: 'ID', type: 'number', width: 50 },
-        { field: 'arrivalDate', headerName: 'Arrival Date', width: 190 },
-        { field: 'emailsSentCount', headerName: 'Emails', type: 'number', width: 150 },
-        { field: 'reservationsCount', headerName: 'Reservations', type: 'number', width: 170 },
-        { field: 'transactionsCount', headerName: 'Transactions', type: 'number', width: 170 }
+        { field: 'arrivalDate', headerName: 'Arrival Date', width: 168 },
+        { field: 'emailsSentCount', headerName: 'Emails', type: 'number', width: 145 },
+        { field: 'reservationsCount', headerName: 'Reservations', type: 'number', width: 168 },
+        { field: 'transactionsCount', headerName: 'Transactions', type: 'number', width: 168 }
 
     ];
 
@@ -90,30 +89,32 @@ function StatisticsSummary() {
         <div>
             <PageTitle title="Statistics Summary" />
             <div className="charts">
-                <LineChart
-                    labelsArray={
-                        arrivalDateData.map(date => {
-                            var newDate = new Date(date);
-                            return `${newDate.getMonth() + 1}/${newDate.getDate()}/${newDate.getFullYear()}`;
-                        })
-                    }
-                    caption="Emails Sent"
-                    dataArray={emailsSentData}
-                    lineColor="#ffae4a"
-                    backgroundColor="#ffae4a"
-                    fillLine={false} />
-                <LineChart
-                    labelsArray={
-                        arrivalDateData.map(date => {
-                            var newDate = new Date(date);
-                            return `${newDate.getMonth() + 1}/${newDate.getDate()}/${newDate.getFullYear()}`;
-                        })
-                    }
-                    caption="Reservations"
-                    dataArray={reservationsData}
-                    lineColor="#41a6c3"
-                    backgroundColor="rgba(65, 166, 195, .5)"
-                    fillLine={true} />
+                <div className="line-charts">
+                    <LineChart
+                        labelsArray={
+                            arrivalDateData.map(date => {
+                                var newDate = new Date(date);
+                                return `${newDate.getMonth() + 1}/${newDate.getDate()}/${newDate.getFullYear()}`;
+                            })
+                        }
+                        caption="Emails Sent"
+                        dataArray={emailsSentData}
+                        lineColor="#ffae4a"
+                        backgroundColor="#ffae4a"
+                        fillLine={false} />
+                    <LineChart
+                        labelsArray={
+                            arrivalDateData.map(date => {
+                                var newDate = new Date(date);
+                                return `${newDate.getMonth() + 1}/${newDate.getDate()}/${newDate.getFullYear()}`;
+                            })
+                        }
+                        caption="Reservations"
+                        dataArray={reservationsData}
+                        lineColor="#41a6c3"
+                        backgroundColor="rgba(65, 166, 195, .5)"
+                        fillLine={true} />
+                </div>
                 <BarChart
                     labelsArray={
                         arrivalDateData.map(date => {
@@ -123,18 +124,15 @@ function StatisticsSummary() {
                     }
                     caption="Transactions"
                     dataArray={transactionsData}
-                    lineColor="#034b7c" />
+                    lineColor="#fb928E" />
             </div>
-
             <div className="data-grid">
                 <DataGrid
                     rows={rowsForTableData}
                     columns={columns}
                     pageSize={5}
-                    rowsPerPageOptions={[5]}
                 />
             </div>
-
             <div className="pie-chart-wrapper">
                 <h5>Monthly Data (September)</h5>
                 <PieChart
@@ -142,27 +140,6 @@ function StatisticsSummary() {
                     caption="Results on month of September"
                     dataArray={dataSumForPieChart} />
             </div>
-            {/* <table className="flat-table flat-table-1">
-                <thead>
-                    <tr>
-                        <th>Arrival Date</th>
-                        <th>Emais Sent</th>
-                        <th>Reservations</th>
-                        <th>Transactions</th>
-                    </tr>
-                </thead>
-                <tbody>{summaryData &&
-                    summaryData.map(summary => (
-                        <tr key={summary.id}>
-                            <td>{summary.arrivalDate}</td>
-                            <td>{summary.emailsSentCount}</td>
-                            <td>{summary.reservationsCount}</td>
-                            <td>{summary.transactionsCount}</td>
-                        </tr>
-                    ))
-                }
-                </tbody>
-            </table> */}
         </div>
     )
 }
