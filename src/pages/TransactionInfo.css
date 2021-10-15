@@ -24,6 +24,7 @@
 }
 
 .transaction-info .left {
+    box-sizing: border-box;
     display: inline-block;
     width: 20%;
     min-width: 250px;
@@ -43,8 +44,9 @@
 }
 
 .transaction-info .right {
+    box-sizing: border-box;
     display: inline-block;
-    width: 70%;
+    width: 50%;
     vertical-align: top;
     line-height: 3;
     color: rgb(168, 168, 168);
@@ -54,4 +56,35 @@
     width: 100px;
     display: inline-table;
     color: rgb(102, 102, 102);
+}
+
+
+
+@media only screen and (max-width: 700px) {
+    .transaction-info {
+        padding: 20px;
+    }
+    .transaction-info .left {
+        width: 100%;
+        border-right: none;
+        padding-bottom: 50px;
+        border-bottom: 2px solid rgba(197, 197, 197, 0.658);
+        margin-bottom: 30px;
+    }
+    .transaction-info .back {
+        margin-bottom: 20px;
+    }
+    .transaction-info .avatar {
+        width: 100%;
+        max-width: 250px;
+        margin: 0 auto;
+    }
+    .transaction-info .left img{
+        display: block;
+        margin: 0 auto;
+        border-radius: 200px;
+    }
+    .transaction-info .right {
+        width: 100%;
+    }
 }

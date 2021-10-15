@@ -9,6 +9,7 @@
 .dash-values-section .dash-value{
     box-sizing: border-box;
     width: 30%;
+    font-size: .9rem;
     padding: 14px 15px;
     border-left: 4px solid #007dc3;
     background-color: rgba(0, 125, 195, 0.1);

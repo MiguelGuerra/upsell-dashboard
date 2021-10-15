@@ -4,22 +4,19 @@
   --secondaryColor: white;
 }
 
-body::-webkit-scrollbar-track
-{
-	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
-	background-color: white;
+body::-webkit-scrollbar-track {
+  -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+  background-color: white;
 }
 
-body::-webkit-scrollbar
-{
-	width: 6px;
-	background-color: white;
+body::-webkit-scrollbar {
+  width: 6px;
+  background-color: white;
 }
 
-body::-webkit-scrollbar-thumb
-{
-	background-color: var(--primaryColor);
+body::-webkit-scrollbar-thumb {
+  background-color: var(--primaryColor);
 }
 
 * {
@@ -37,7 +34,11 @@ a {
   color: inherit;
 }
 
-.active .menu-item{
+.active .menu-item {
   background-color: rgba(255, 255, 255, 0.85);
   color: var(--primaryColor);
+}
+
+.full-width {
+  width: 100%;
 }

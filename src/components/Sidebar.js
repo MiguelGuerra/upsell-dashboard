@@ -28,7 +28,7 @@ function Sidebar() {
                     <p>Statistics Summary</p>
                 </div>
             </NavLink>
-            <NavLink exact to="/last-transactions" activeClassName="active">
+            <NavLink to="/last-transactions" activeClassName="active">
                 <div className="menu-item">
                     <AiOutlineUnorderedList />
                     <p>Last Transactions</p>

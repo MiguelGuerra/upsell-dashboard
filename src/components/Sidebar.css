@@ -1,15 +1,13 @@
 aside {
-    height: 90vh;
+    height: calc(100vh - 95px);
     display: inline-block;
     background-color: var(--primaryColor);
     color: var(--secondaryColor);
     flex-direction: column;
     font-size: 1.15rem;
-    transition: all 0.3s;
     position: fixed;
     z-index: 90;
     bottom: 0;
-    top: 10vh;
 }
 
 aside.opened {

@@ -56,6 +56,7 @@
 
 .charts .line-charts {
     display: block;
+    padding: 0 28px;
 }
 
 .charts .line-chart {
@@ -69,7 +70,7 @@
 }
 
 .charts .bar-chart {
-    width: 100%;
+    padding: 0 40px;
     height: 300px;
 }
 
@@ -118,11 +119,11 @@
 .select-wrapper {
     position: relative;
     width: 20%;
+    min-width: 250px;
 }
 
 select {
     width: 100%;
-    min-width: 200px;
     height: 45px;
     font-size: 100%;
     cursor: pointer;
@@ -139,20 +140,17 @@ select {
     border-radius: 4px;
 }
 
-select::-webkit-scrollbar-track
-{
-	background-color: #F5F5F5;
+select::-webkit-scrollbar-track {
+    background-color: #f5f5f5;
 }
 
-select::-webkit-scrollbar
-{
-	width: 4px;
-	background-color: #F5F5F5;
+select::-webkit-scrollbar {
+    width: 4px;
+    background-color: #f5f5f5;
 }
 
-select::-webkit-scrollbar-thumb
-{
-	background-color: var(--primaryColor);
+select::-webkit-scrollbar-thumb {
+    background-color: var(--primaryColor);
 }
 
 /* For IE <= 11 */
@@ -187,7 +185,36 @@ select::-ms-expand {
 
 @media only screen and (max-width: 1000px) {
     .left-panel {
+        width: 95%;
+        margin: 0 auto;
+        display: block;
+        margin-bottom: 30px;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .pie-chart-wrapper,
+    .data-grid {
         width: 100%;
-        margin-left: 0;
+        margin: 0 auto;
+        display: block;
+    }
+    .charts {
+        margin-bottom: 20px;
+    }
+    .data-grid {
+        margin-bottom: 20px;
+    }
+    .charts .line-chart {
+        width: 100%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .charts .line-charts {
+        padding: 0 10px;
+    }
+    .charts .bar-chart {
+        padding: 0 12px;
     }
 }

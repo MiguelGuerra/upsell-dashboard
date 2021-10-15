@@ -8,7 +8,7 @@ function DashValues({ emailsSent, reservations, transactions }) {
                 <div>
                     <b>{emailsSent}</b>
                 </div>
-                <div>Emails Sent</div>
+                <div>Emails</div>
             </div>
             <div className="dash-value">
                 <div>

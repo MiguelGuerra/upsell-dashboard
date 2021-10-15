@@ -24,6 +24,11 @@ function HamburguerMenu() {
                                 Last Transactions
                             </Link>
                         </li>
+                        <li>
+                            <Link to="/Configurations">
+                                Configurations
+                            </Link>
+                        </li>
                     </ul>
                 </nav>
             </div>
